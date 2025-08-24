@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Drop Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Water Drop Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#order">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">Admin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5 pt-3">
+    <!-- Order Section -->
+    <section id="order">
+      <h1 class="text-center text-primary mb-4">Water Drop Shop</h1>
+      <div class="card p-3 mb-4">
+        <h3 class="card-title text-center">Place Your Order</h3>
+        <form id="order-form" action="https://formspree.io/f/mwpneowl" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Delivery Address</label>
+            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+            <button type="button" class="btn btn-outline-primary mt-2" onclick="getLocation()">Use My Location</button>
+          </div>
+          <div class="mb-3">
+            <label for="bottle-size" class="form-label">Bottle Size</label>
+            <select class="form-select" id="bottle-size" name="bottleSize" required>
+              <option value="1L">1 Liter - $1</option>
+              <option value="5L">5 Liters - $4</option>
+              <option value="20L">20 Liters - $10</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="1" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Place Order</button>
+        </form>
+        <p id="message" class="text-center mt-3"></p>
+      </div>
+      <div class="card p-3 mb-4">
+        <h3 class="card-title text-center">Your Orders</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Bottle Size</th>
+              <th>Quantity</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="order-display"></tbody>
+        </table>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="mt-5">
+      <div class="card p-3 mb-4">
+        <h3 class="card-title text-center">About Water Drop Shop</h3>
+        <p class="text-center">Water Drop Shop provides high-quality purified water to your doorstep. We offer a range of bottle sizes to suit your needs, with fast and reliable delivery. Our mission is to keep you hydrated with clean, safe water.</p>
+        <h4 class="text-center">Why Choose Us?</h4>
+        <ul>
+          <li>Pure, safe drinking water</li>
+          <li>Convenient online ordering</li>
+          <li>Fast delivery to your location</li>
+          <li>Customer-friendly tracking</li>
+        </ul>
+        <h4 class="text-center">Contact Us</h4>
+        <p class="text-center">
+          Email: shopkeeper@example.com<br>
+          Phone: +1-234-567-8900<br>
+          Address: 123 Water Lane, City, Country
+        </p>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
